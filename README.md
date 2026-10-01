@@ -5,11 +5,20 @@ Built to **leave Wix Premium** (no monthly site host fee). This repo is the free
 
 **Do not change DNS for womplumbing.com until Mike APPROVES a cutover. Do not cancel Wix.**
 
-`index.html` is at the repository root (not inside a `wom-site-v2/` folder). Free preview, once Pages is on:
+`index.html` is at the repository root (not inside a `wom-site-v2/` folder). There is no `CUTOVER.md` in this build; cutover steps are in this README and still require Mike’s approval.
+
+## Pages switch (still needs an admin)
+
+The site files are on `main`. GitHub Pages is **not enabled yet**. The token that pushed this repo cannot change Settings → Pages (the API returns 403, and a GitHub Actions attempt failed the same way). A repository admin has to do this once:
+
+1. Open [Settings → Pages](https://github.com/WOMP27DEBUG/plumbing-website-one-/settings/pages).
+2. Source: **Deploy from a branch**.
+3. Branch: **main**. Folder: **/ (root)**. Save.
+4. Do **not** enter a custom domain on that screen.
+
+Free preview after that save (staging only — `womplumbing.com` stays on Wix):
 
 https://womp27debug.github.io/plumbing-website-one-/
-
-That URL is a staging preview only. `womplumbing.com` stays on Wix until Mike says otherwise. There is no `CUTOVER.md` in this build; cutover steps are in this README and still require Mike’s approval.
 
 ## Business (locked)
 
