@@ -1,151 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Of Mouth Plumbing LLC | Expert Plumbing in Hudson Valley, NY</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background: #007BFF; color: white; padding: 80px 20px; text-align: center; }
-        nav { background: #333; padding: 15px; text-align: center; }
-        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; font-size: 1.1em; }
-        section { padding: 50px 20px; text-align: center; }
-        .services { background: #f4f4f4; }
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 30px; }
-        .card { background: white; border: 1px solid #ddd; border-radius: 10px; padding: 25px; width: 320px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
-        footer { background: #333; color: white; padding: 30px; text-align: center; }
-        h1, h2 { margin: 0 0 20px; }
-        .btn { background: #007BFF; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
-    </style>
-</head>
-<body>
+# Word Of Mouth Plumbing LLC — site v2
 
-    <header>
-        <h1>Word Of Mouth Plumbing LLC</h1>
-        <p>Your Trusted Local Plumber in Middletown & Hudson Valley, NY</p>
-        <p>Owner-Operated • Over 11 Years of Experience • Reliable & Professional Service</p>
-        <p>Call Today: (845-476-9348) • Emergency Service Available</p>
-        <a href="#contact" class="btn">Get a Free Quote</a>
-    </header>
+Fresh static website for **Mike Rahm / Word Of Mouth Plumbing LLC**.  
+Built to **leave Wix Premium** (no monthly site host fee). This repo is the free host: GitHub Pages, deploy from branch `main`, folder `/` (root). Keep `womplumbing.com` at the registrar (~$10–20/year — domain only, not a website plan).
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
+**Do not change DNS for womplumbing.com until Mike APPROVES a cutover. Do not cancel Wix.**
 
-    <section id="home">
-        <h2>Welcome to Word Of Mouth Plumbing LLC</h2>
-        <p>Serving Middletown and the Hudson Valley region with expert plumbing solutions. From emergency repairs to full remodels, we deliver quality workmanship, timely service, and complete customer satisfaction.</p>
+`index.html` is at the repository root (not inside a `wom-site-v2/` folder). Free preview, once Pages is on:
 
-<grok-card data-id="01018a" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+https://womp27debug.github.io/plumbing-website-one-/
 
+That URL is a staging preview only. `womplumbing.com` stays on Wix until Mike says otherwise. There is no `CUTOVER.md` in this build; cutover steps are in this README and still require Mike’s approval.
 
+## Business (locked)
 
-<grok-card data-id="049e80" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+| Field | Value |
+|--------|--------|
+| Name | Word Of Mouth Plumbing LLC |
+| Phone | (845) 476-9348 |
+| Email | wordofmouthplumbing27@gmail.com |
+| NAP | 577 Goshen Tpk, Middletown, NY 10941 |
+| Domain (later) | womplumbing.com |
+| Hours | Emergency Mon–Fri (24/7); Sat 9:00 AM–3:00 PM; Sun closed |
+| Focus | Emergency, heat/boiler, water heaters, drains/frozen pipes |
 
+## Pages
 
+| File | Purpose |
+|------|---------|
+| `index.html` | Home — winter CTAs above the fold |
+| `emergency.html` | Emergency plumber Middletown NY |
+| `boiler-heat.html` | Boiler / heat |
+| `water-heaters.html` | Water heater repair & replace |
+| `drains.html` | Drains & frozen pipes |
+| `service-area.html` | Towns + NAP |
+| `about.html` | Owner-operated / insured |
+| `contact.html` | Phone, SMS, email, hours |
 
-<grok-card data-id="f0a062" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+Phone click-to-call is in the **top bar**, **header CTA**, **hero**, and (on mobile) a **sticky Call / Text bar**. No fake reviews. No competitor names.
 
-    </section>
+## Preview on the box
 
-    <section id="about" class="services">
-        <h2>About Us</h2>
-        <p>Hi, I'm Brian, proud owner and operator of Word Of Mouth Plumbing LLC. With over 11 years of hands-on experience, I've built this business on reliability, professionalism, and dedication to customer satisfaction. We're a trusted name in the Hudson Valley, using industry-leading tools to get every job done right—the first time.</p>
-        <p>We focus on quality, competitive pricing, and leaving your home cleaner than we found it.</p>
-    </section>
+```bash
+python3 -m http.server 8765
+```
 
-    <section id="services">
-        <h2>Our Plumbing Services</h2>
-        <p>Comprehensive residential and commercial plumbing in Middletown, NY and surrounding areas.</p>
-        <div class="grid">
-            <div class="card">
-                <h3>Leak Detection & Repairs</h3>
-                <p>Fast, accurate detection and fixes to prevent water damage.</p>
+Open: `http://127.0.0.1:8765/` (or the box browser at that URL).
 
-<grok-card data-id="3addc0" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+Optional: `python3 -m http.server 8765 --bind 0.0.0.0`
 
+## Cost honesty: free site host ≠ free domain
 
+| Piece | Typical cost |
+|--------|----------------|
+| **This site (HTML/CSS/JS)** | Free to host on GitHub Pages or Cloudflare Pages |
+| **womplumbing.com registration** | ~$10–20 / year at the registrar (GoDaddy, Namecheap, Cloudflare Registrar, Google Domains successor, etc.) |
+| **Wix Premium** | Cancel after DNS points at the new host and search/GBP look healthy (Mike APPROVE) |
 
-<grok-card data-id="296e96" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+You still pay for the **domain name**. You do **not** need Wix (or any paid website builder) to run this static site.
 
-            </div>
-            <div class="card">
-                <h3>Water Heater & Boiler Services</h3>
-                <p>Installation, replacement, and repairs for all types.</p>
+---
 
-<grok-card data-id="3e99bc" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+## Free host path A — GitHub Pages (recommended simple)
 
+1. Create a GitHub account (free) if needed.
+2. New repo, e.g. `womplumbing-site` (public for free project Pages, or private with GitHub free limits as applicable).
+3. Site files are already at this repo root (`index.html` next to this README). Do not nest them in a subfolder.
+4. **Settings → Pages →** Deploy from branch `main` (root), or use GitHub Actions static HTML.
+5. Wait for `https://<user>.github.io/womplumbing-site/` to load and test phone links on mobile.
+6. **Custom domain:** Pages → Custom domain → `womplumbing.com` (+ `www` if desired). GitHub shows the DNS records to add.
+7. At the **domain registrar** (not Wix), set:
+   - **A records** for `@` to GitHub Pages IPs (current list is in GitHub Docs: “Managing a custom domain for your GitHub Pages site”), **or**
+   - **CNAME** for `www` → `<user>.github.io`
+8. Enable **Enforce HTTPS** in Pages once DNS validates.
+9. Only then: cancel Wix Premium / remove Wix DNS when Mike confirms the new site is live.
 
+## Free host path B — Cloudflare Pages
 
-<grok-card data-id="f2ec53" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+1. Free Cloudflare account; add or transfer DNS for `womplumbing.com` (optional but clean).
+2. **Workers & Pages → Create →** Upload assets, or connect a Git repo containing this folder.
+3. Build command: none (static). Output directory: `/` (project root).
+4. **Custom domains →** attach `womplumbing.com` and `www`.
+5. Cloudflare provisions HTTPS. Point registrar nameservers to Cloudflare **or** add the CNAME/A records Cloudflare shows.
+6. Test, then leave Wix when ready.
 
-            </div>
-            <div class="card">
-                <h3>Bathroom & Kitchen Remodels</h3>
-                <p>Expert plumbing for your renovation projects.</p>
+## Migrate off live Wix (later — APPROVE required)
 
-<grok-card data-id="c813cb" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+1. Preview and approve content on this v2 site.
+2. Pick GitHub Pages **or** Cloudflare Pages; deploy a staging URL first.
+3. Update Google Business Profile website URL only after the custom domain serves this site on HTTPS.
+4. At registrar: change DNS from Wix to GitHub/Cloudflare (steps above). TTL: lower to 300s a day before cutover if possible.
+5. Keep Wix paid for a short overlap (e.g. 1–2 weeks) so rollback is possible.
+6. Submit `https://womplumbing.com/sitemap.xml` in Google Search Console.
+7. Cancel Wix Premium after traffic/calls look normal — **stops the monthly site fee**; keep paying only domain (~$10–20/yr).
 
+## Local file map
 
+```
+index.html … contact.html
+css/styles.css
+js/site.js
+brand/          # logos from prior pack
+img/            # job + GBP photos
+robots.txt
+sitemap.xml
+README.md
+.nojekyll       # serve files as-is (skip Jekyll)
+```
 
-<grok-card data-id="577fb2" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
+## Out of scope (this build)
 
-            </div>
-            <div class="card">
-                <h3>Drain Cleaning & Pipe Work</h3>
-                <p>Snaking, replacements, and clog removal.</p>
-
-<grok-card data-id="b44aaf" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
-
-
-
-<grok-card data-id="1505de" data-type="image_card"  data-arg-size="SMALL" ></grok-card>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="services">
-        <h2>What Our Customers Say</h2>
-        <p>Real reviews from satisfied Hudson Valley clients:</p>
-        <div class="grid">
-            <div class="card">
-                <p>"One of the best experiences with plumbing work! Fair, friendly, and fantastic!"</p>
-            </div>
-            <div class="card">
-                <p>"Very quick to respond and got the job done the same day. Reliable and efficient."</p>
-            </div>
-            <div class="card">
-                <p>"Professional, courteous, and completed work on time. Highly recommend!"</p>
-            </div>
-            <div class="card">
-                <p>"Trusted name in the community—dedicated to customer satisfaction."</p>
-            </div>
-        </div>
-
-<grok-card data-id="f0086c" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
-
-
-
-<grok-card data-id="7b7a58" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
-
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us Today</h2>
-        <p>Serving Middletown, NY and the Hudson Valley. Emergency service available!</p>
-        <p>Phone: (Your Phone Number) | Email: [your@email.com]</p>
-        <a href="tel:(YourPhone)" class="btn">Call Now</a>
-    </section>
-
-    <footer>
-        <p>© 2026 Word Of Mouth Plumbing LLC • Middletown, NY • All Rights Reserved</p>
-        <p>Licensed & Insured • Proudly Serving the Hudson Valley</p>
-    </footer>
-
-</body>
-</html>
+- No Wix publish / editor changes  
+- No DNS or registrar changes until Mike APPROVES  
+- No fake reviews or competitor mentions  
